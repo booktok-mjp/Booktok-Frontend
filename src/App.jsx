@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import useAllBooks from './hooks/useAllBooks';
+import useSingleBook from './hooks/useSingleBook';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { books, loading, error } = useAllBooks();
+  const {
+    book: currentBook,
+    loading: bookLoading,
+    error: bookError,
+  } = useSingleBook(1);
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {books &&
+        books.length > 0 &&
+        books.map((book) => (
+          <div key={book.id}>
+            <p>{book.title}</p>
+
+            {book.authors.map((author) => (
+              <p key={author.id}>{author.name}</p>
+            ))}
+          </div>
+        ))}
+      {currentBook && (
+        <>
+          <p>current book: </p>
+          <p>{currentBook.title}</p>
+        </>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
