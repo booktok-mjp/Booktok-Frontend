@@ -1,0 +1,27 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-container.small {
+  width: 100px;
+  height: 100px;
+}
+
+.image-container.medium {
+  width: 200px;
+  height: 200px;
+}
+
+.image-container.large {
+  width: 500px;
+  height: 500px;
+}
+
+.app-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
