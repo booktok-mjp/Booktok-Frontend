@@ -15,7 +15,7 @@ function App() {
   }, [setUser]);
 
   return (
-    <>
+    <div style={{ backgroundColor: 'var(--cream)' }}>
       {user ? (
         <Routes>
           <Route path="/" element={<HomeView />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<LandingView />} />
         </Routes>
       )}
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,23 @@
+.navbar-link {
+  font-size: 14pt;
+  font-family: source-sans-3-regular;
+}
+
+.navbar-icon {
+  margin-right: 10px;
+}
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.offcanvas-content {
+  flex-grow: 1;
+}
+
+.offcanvas-footer {
+  padding-top: 20px;
+  text-align: center;
+}
