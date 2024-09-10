@@ -1,0 +1,8 @@
+.logout-btn {
+  font-family: source-sans-3-regular;
+  text-transform: uppercase;
+}
+
+.logout-btn:hover {
+  background-color: var(--dark-slate);
+}
