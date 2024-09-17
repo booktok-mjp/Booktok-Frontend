@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { useUser } from './context/UserContext';
-import LandingView from './views/LandingView';
-import HomeView from './views/HomeView';
-import './App.css';
+import LandingView from './views/home/LandingView';
+import HomeView from './views/home/HomeView';
+import CustomNavbar from './components/navbar/NavBar';
+import BookcaseView from './views/bookcase/BookcaseView';
 
 function App() {
   const { user, setUser } = useUser();
@@ -17,9 +18,13 @@ function App() {
   return (
     <div style={{ backgroundColor: 'var(--cream)' }}>
       {user ? (
-        <Routes>
-          <Route path="/" element={<HomeView />} />
-        </Routes>
+        <>
+          <CustomNavbar />
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="/mybookcase" element={<BookcaseView />} />
+          </Routes>
+        </>
       ) : (
         <Routes>
           <Route path="/" element={<LandingView />} />
