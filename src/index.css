@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 * {
   margin: 0;
@@ -44,5 +45,11 @@
   font-family: 'Source Sans 3', sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
+  font-style: normal;
+}
+
+.pacifico-regular {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
   font-style: normal;
 }
