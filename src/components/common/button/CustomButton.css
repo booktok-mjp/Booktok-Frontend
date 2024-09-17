@@ -1,0 +1,9 @@
+.custom-btn {
+  font-family: source-sans-3-regular;
+  text-transform: uppercase;
+  /* background-color: var(--dark-slate); */
+}
+
+.custom-btn:hover {
+  background-color: var(--dark-slate);
+}
