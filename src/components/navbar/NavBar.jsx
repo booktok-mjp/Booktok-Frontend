@@ -11,8 +11,9 @@ import {
   BsCollectionFill,
   BsChatTextFill,
 } from 'react-icons/bs';
-import logo from '../../assets/images/bookflower.png';
+import logo from '../../assets/images/booktokcream.png';
 import './NavBar.css';
+import AppImage from '../common/image/AppImage';
 
 const CustomNavbar = () => {
   return (
@@ -24,13 +25,10 @@ const CustomNavbar = () => {
         style={{ height: '100px', backgroundColor: 'var(--navy-blue)' }}
       >
         <Container fluid>
-          <Navbar.Brand
-            className="source-sans-3-bold text-uppercase fs-2"
-            href="#"
-          >
+          <Navbar.Brand className="pacifico-regular fs-1" href="/">
             Book Tok
           </Navbar.Brand>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Find a book!"
@@ -41,17 +39,17 @@ const CustomNavbar = () => {
             <Button variant="outline-light" className="source-sans-3-regular">
               Search
             </Button>
-          </Form>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${1}`} />
+          </Form> */}
+          <Navbar.Toggle aria-controls="offcanvasNavbar-expand" />
           <Navbar.Offcanvas
-            id={`offcanvasNavbar-expand-${1}`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-${1}`}
+            id="offcanvasNavbar-expand"
+            aria-labelledby={`offcanvasNavbarLabel-expand`}
             placement="end"
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title
-                className="source-sans-3-bold text-uppercase fs-2"
-                id={`offcanvasNavbarLabel-expand-${1}`}
+                className="pacifico-regular fs-1"
+                id="offcanvasNavbar-expand"
               >
                 Book Tok
               </Offcanvas.Title>
@@ -67,7 +65,7 @@ const CustomNavbar = () => {
                     <BsFillBookFill className="navbar-icon" fontSize={30} />
                     Discover
                   </Nav.Link>
-                  <Nav.Link className="navbar-link" href="#action2">
+                  <Nav.Link className="navbar-link" href="/mybookcase">
                     <BsCollectionFill className="navbar-icon" fontSize={30} />
                     My Bookcase
                   </Nav.Link>

@@ -1,18 +1,19 @@
-import LogoutBtn from '../components/common/button/logout/LogoutBtn';
-import CustomCard from '../components/common/card/CustomCard';
-import CustomGrid from '../components/common/grid/CustomGrid';
-import Navbar from '../components/navbar/NavBar';
-import { useUser } from '../context/UserContext';
-import useAllBooks from '../hooks/useAllBooks';
-import useSingleBook from '../hooks/useSingleBook';
+import LogoutBtn from '../../components/common/button/logout/LogoutBtn';
+import CustomCard from '../../components/common/card/CustomCard';
+import CustomGrid from '../../components/common/grid/CustomGrid';
+import Navbar from '../../components/navbar/NavBar';
+import { useUser } from '../../context/UserContext';
+import useAllBooks from '../../hooks/useAllBooks';
+import useSingleBook from '../../hooks/useSingleBook';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { books } from '../../data/books';
 
 const HomeView = () => {
   const { setUser } = useUser();
   // const { book, loading, error } = useSingleBook(2);
-  const { books, loading, error } = useAllBooks();
+  // const { books, loading, error } = useAllBooks();
 
   const handleLogout = () => {
     setUser(null);
@@ -25,7 +26,6 @@ const HomeView = () => {
 
   return (
     <div>
-      <Navbar />
       <div
         style={{
           display: 'flex',
