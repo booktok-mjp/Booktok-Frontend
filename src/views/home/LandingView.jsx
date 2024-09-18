@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { Button, Container, Row, Col, Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import LoginForm from '../../components/form/LoginForm';
 import SignupForm from '../../components/form/SignupForm';
 import './LandingView.css';
 import logo from '../../assets/images/booktokred.png';
-import book from '../../assets/images/bookflower.png';
-import AppImage from '../../components/common/image/AppImage';
-import CustomButton from '../../components/common/button/CustomButton';
+import CustomHeader from '../../components/header/CustomHeader';
+import { Colors, Constants } from '../../config';
 
 const LandingView = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -16,33 +15,30 @@ const LandingView = () => {
   };
 
   return (
-    <>
-      <Container fluid className="landing-container">
-        <Row className="justify-content-center">
-          <Col>
-            <AppImage imgUrl={book} size="large" />
-          </Col>
-          <Col className="text-start">
-            <Card
-              className="mt-4 p-5 form-card"
-              style={{ backgroundColor: 'var(--cream)' }}
-            >
-              <AppImage imgUrl={logo} size="wide" />
-              {isLogin ? <LoginForm /> : <SignupForm />}
-              <Button
-                onClick={toggleForm}
-                variant="link"
-                className="link-dark link-underline-secondary mt-2"
-              >
-                {isLogin
-                  ? "Don't have an account? Sign Up"
-                  : 'Already have an account? Log In'}
-              </Button>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </>
+    <div className="landing-page-container">
+      <Card className="p-5 form-card" style={{ backgroundColor: Colors.cream }}>
+        <div className="text-center">
+          <img src={logo} alt="Book Tok Logo" style={{ width: '80%' }} />
+        </div>
+        {isLogin ? <LoginForm /> : <SignupForm />}
+        <Button
+          onClick={toggleForm}
+          variant="link"
+          className="link-dark link-underline-secondary mt-2 link-offset-3-hover"
+        >
+          {isLogin
+            ? "Don't have an account? Sign Up"
+            : 'Already have an account? Log In'}
+        </Button>
+      </Card>
+      <div className="text-center mt-5">
+        <CustomHeader
+          text={Constants.tagline2}
+          fontSize="20pt"
+          color={Colors.wineRed}
+        />
+      </div>
+    </div>
   );
 };
 
