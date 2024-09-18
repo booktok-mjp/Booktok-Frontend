@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
 import CustomButton from '../common/button/CustomButton';
+import { Colors } from '../../config';
 
 const SignupForm = () => {
   const [name, setName] = useState('');
@@ -52,7 +53,13 @@ const SignupForm = () => {
           />
         </Form.Group>
 
-        <CustomButton text="Sign Up" handlerFunction={handleSubmit} />
+        <CustomButton
+          text="Sign Up"
+          handlerFunction={handleSubmit}
+          color={Colors.cream}
+          backgroundColor={Colors.wineRed}
+          borderColor={Colors.wineRed}
+        />
       </Form>
     </div>
   );

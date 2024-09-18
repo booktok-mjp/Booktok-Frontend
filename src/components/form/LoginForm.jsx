@@ -4,11 +4,11 @@ import Form from 'react-bootstrap/Form';
 import { loginUser } from '../../services/userService';
 import { useUser } from '../../context/UserContext';
 import CustomButton from '../common/button/CustomButton';
+import { Colors } from '../../config';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [isLoginForm, setIsLoginForm] = useState(false);
   const { setUser } = useUser();
 
   const handleSubmit = async (e) => {
@@ -46,11 +46,15 @@ const LoginForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <CustomButton
-          text="Log In"
-          handlerFunction={handleSubmit}
-          variant="outline-secondary"
-        />
+        <div className="mt-4">
+          <CustomButton
+            text="Log In"
+            handlerFunction={handleSubmit}
+            color={Colors.cream}
+            backgroundColor={Colors.paynesGray}
+            borderColor={Colors.paynesGray}
+          />
+        </div>
       </Form>
     </div>
   );
