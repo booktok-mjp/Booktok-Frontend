@@ -1,19 +1,17 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import LogoutBtn from '../common/button/logout/LogoutBtn';
 import {
   BsFillBookFill,
   BsFillHousesFill,
   BsCollectionFill,
   BsChatTextFill,
 } from 'react-icons/bs';
-import logo from '../../assets/images/booktokcream.png';
+
+import LogoutBtn from '../common/button/logout/LogoutBtn';
+import logo from '../../assets/images/bookflower.png';
 import './NavBar.css';
-import AppImage from '../common/image/AppImage';
 
 const CustomNavbar = () => {
   return (
@@ -22,24 +20,16 @@ const CustomNavbar = () => {
         variant="dark"
         expand={false}
         className="mb-5"
-        style={{ height: '100px', backgroundColor: 'var(--navy-blue)' }}
+        style={{
+          height: '100px',
+          backgroundColor: 'var(--navy-blue)',
+          position: 'sticky',
+        }}
       >
         <Container fluid>
           <Navbar.Brand className="pacifico-regular fs-1" href="/">
             Book Tok
           </Navbar.Brand>
-          {/* <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Find a book!"
-              className="me-2"
-              aria-label="Search"
-              size="md"
-            />
-            <Button variant="outline-light" className="source-sans-3-regular">
-              Search
-            </Button>
-          </Form> */}
           <Navbar.Toggle aria-controls="offcanvasNavbar-expand" />
           <Navbar.Offcanvas
             id="offcanvasNavbar-expand"
