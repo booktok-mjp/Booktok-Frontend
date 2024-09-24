@@ -1,0 +1,16 @@
+.icon-container-react {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--navy-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cream);
+  cursor: pointer;
+}
+
+.icon-container-react:hover {
+  transform: scale(1.05);
+}
