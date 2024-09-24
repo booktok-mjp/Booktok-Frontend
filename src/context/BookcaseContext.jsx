@@ -3,6 +3,7 @@ import React, { createContext, useReducer, useEffect } from 'react';
 
 const initialState = {
   books: JSON.parse(localStorage.getItem('bookcaseBooks')) || [],
+  readingNow: null,
 };
 
 const bookcaseReducer = (state, action) => {
@@ -30,6 +31,12 @@ const bookcaseReducer = (state, action) => {
         books: state.books.filter((book) => book.id !== action.payload),
       };
     }
+
+    case 'SET_READING_NOW':
+      return {
+        ...state,
+        readingNow: action.payload,
+      };
 
     default:
       return state;
