@@ -1,0 +1,23 @@
+.landing-page-container {
+  background-image: url('../../assets/images/books.png');
+  background-size: contain;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-card {
+  border: none;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.358);
+  border-radius: 10px;
+  min-width: 300px;
+}
+
+.toggle-btn {
+  color: var(--forest-green);
+  font-size: 14px;
+  text-decoration: underline;
+}
