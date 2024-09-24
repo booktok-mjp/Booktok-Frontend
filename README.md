@@ -1,8 +1,23 @@
-# React + Vite
+# Book Tok
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Book Tok is a full-featured web application designed for book enthusiasts. It allows users to manage a digital bookcase, set books they are currently reading, discover new books, and engage in discussions with other readers.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Secure login and registration system for users.
+- **My Bookcase**: Users can add books to their personal bookcase, mark books as currently reading, and view books they have read.
+- **Discover**: Explore new books and authors based on different criteria and recommendations.
+- **Discussions**: Participate in or start discussions on books for a more interactive experience.
+- **Responsive Design**: Fully responsive web design that works on mobile, tablet, and desktop.
+
+## Technologies Used
+
+- **Frontend**: React, React-Bootstrap for styling, React Router for navigation
+- **Backend** (Planned): Java & Postgresql
+
+## Installation
+
+1. Clone the repository:
+2. Navigate to project directory
+3. `npm install`
+4. `npm run dev`
