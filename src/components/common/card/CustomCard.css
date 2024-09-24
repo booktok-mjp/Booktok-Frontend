@@ -7,7 +7,7 @@
 }
 
 .custom-card-img-container {
-  background-color: #e0e0e0;
+  background-color: var(--bone);
   height: 250px;
   display: flex;
   align-items: center;

@@ -1,24 +1,29 @@
+import React from 'react';
+import { Button } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
-import { GiBookPile } from 'react-icons/gi';
-import NullBook from '../book/NullBook';
 import { useNavigate } from 'react-router-dom';
-import useDeviceType from '../../../hooks/useDeviceType';
-import './CustomCard.css';
-import { Colors } from '../../../config';
 
-const CustomCard = ({ book }) => {
+import NullBook from '../book/NullBook';
+import AddBookButton from '../button/addBook/AddBookButton';
+import { useBookcase } from '../../../context/BookcaseContext';
+
+import './CustomCard.css';
+
+const CustomCard = ({ book, showAddBtn = true }) => {
   const navigate = useNavigate();
-  const deviceType = useDeviceType();
-  const showBiggerCard = deviceType === 'mobile' || deviceType === 'tablet';
+  const { dispatch } = useBookcase();
 
   const handleNavigate = () => {
-    navigate(`/book/${book.title}/${book.id}`);
+    navigate(`/book/${book.id}`);
   };
 
-  const shortenedDescription = (description) => {
-    if (description.length > 60) return description.substring(0, 70) + '...';
-    return description;
+  const handleAddToBookcase = () => {
+    dispatch({ type: 'ADD_BOOK', payload: book });
+  };
+
+  const handleSetReadingNow = (bookId) => {
+    dispatch({ type: 'SET_READING_NOW', payload: bookId });
   };
 
   return (
@@ -38,20 +43,27 @@ const CustomCard = ({ book }) => {
       <Card.Body className="d-flex flex-column">
         <Card.Title>{book.title}</Card.Title>
         <Card.Text className="flex-grow-1">
-          {shortenedDescription(book.description)}
+          {book.description.substring(0, 60)}...
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush bg-body-tertiary">
-        {book.authors.map((author) => (
-          <ListGroup.Item key={book.id + author.name}>
-            {author.name}
-          </ListGroup.Item>
-        ))}
+        <ListGroup.Item>{book.authors[0].name}</ListGroup.Item>
       </ListGroup>
-      <Card.Body className="text-center">
-        <Card.Text>Add to TBR</Card.Text>
-        <GiBookPile fontSize="30pt" color={Colors.forestGreen} />
-      </Card.Body>
+      {showAddBtn ? (
+        <Card.Body className="text-center align-items-end">
+          <AddBookButton onClick={handleAddToBookcase} />
+        </Card.Body>
+      ) : (
+        <Card.Body className="text-center align-items-end">
+          <Button
+            className="d-block"
+            variant="success"
+            onClick={() => handleSetReadingNow(book.id)}
+          >
+            Set as Reading Now
+          </Button>
+        </Card.Body>
+      )}
     </Card>
   );
 };
